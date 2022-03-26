@@ -1,0 +1,12 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+
+$PWD/docker/odoo/app/data/*
+$PWD/docker/odoo/postgres/data/*
+$PWD/docker/odoo/web/data*
+$PWD/docker/odoo/admin/data*
+
+
+
