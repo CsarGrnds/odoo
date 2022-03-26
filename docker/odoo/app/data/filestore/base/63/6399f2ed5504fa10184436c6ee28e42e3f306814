@@ -1,0 +1,6 @@
+
+/* /web/static/src/js/services/session.js defined in bundle 'web.assets_frontend' */
+odoo.define('web.session',function(require){"use strict";var Session=require('web.Session');var modules=odoo._modules;var session=new Session(undefined,undefined,{modules:modules,use_cors:false});session.is_bound=session.session_bind();return session;});;
+
+/* /web/static/src/js/chrome/public_root_widget.js defined in bundle 'web.assets_frontend' */
+odoo.define('root.widget',function(require){"use strict";var ServiceProviderMixin=require('web.ServiceProviderMixin');var Widget=require('web.Widget');var PublicRootWidget=Widget.extend(ServiceProviderMixin,{init:function(){this._super.apply(this,arguments);ServiceProviderMixin.init.call(this);}});return new PublicRootWidget();});

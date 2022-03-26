@@ -1,0 +1,77 @@
+# Teknixx - Odoo 12 Electronic Invoice CR
+# Maintain by: CsarGrnds
+version: '3.8'
+services:
+#Database Layer
+  db:
+    container_name: postgres
+    image: postgres:12.10
+    environment:
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+      - POSTGRES_DB=postgres
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    #DB - Storage Leyer
+    volumes:
+      - $PWD/postgres/data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432    
+    networks:
+      - odoo-network
+    restart: always 
+
+#Aplication Layer
+  app:
+    container_name: odoo12
+    image: odoo:12.0
+    platform: linux/x86_64
+    #APP - Storage Leyer
+    volumes:
+      - $PWD/app/data:/var/lib/odoo
+      - $PWD/app/config:/etc/odoo
+      - $PWD/app/addons:/mnt/extra-addons
+      - $PWD/app/enterprise:/mmt/enterprise
+    ports: 
+      - 8069:8069
+    networks:
+      - odoo-network
+    depends_on:
+      - db
+    restart: always 
+
+#Web Layer
+  web:
+    container_name: nginx
+    image: nginx:latest
+    volumes:
+      - $PWD/web/data:/etc/nginx/conf.d/
+    ports:
+      - 80:80
+      - 443:443 
+    networks:
+      - odoo-network
+    depends_on:
+      - app
+
+  pgadmin:
+      container_name: PGadmin
+      image: dpage/pgadmin4:5.4
+      environment:
+        PGADMIN_DEFAULT_EMAIL: admin@admin.com
+        PGADMIN_DEFAULT_PASSWORD: odoo     
+      volumes:
+        - $PWD/admin/data:/var/lib/pgadmin
+      links:
+      - "db:pgsql-server"
+      ports:
+        - 5050:80
+      networks:
+        - odoo-network 
+      depends_on:
+        - db
+      restart: always
+
+#Network Layer
+networks:
+  odoo-network:
+
