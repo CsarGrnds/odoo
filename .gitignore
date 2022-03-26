@@ -3,7 +3,7 @@
 .DS_Store
 .DS_Store?
 
-docker/odoo/app/data/*
+docker/odoo/app/data/
 docker/odoo/postgres/data/*
 docker/odoo/web/data/*
 docker/odoo/admin/data/*
