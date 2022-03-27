@@ -29,7 +29,7 @@ Requirements:
 Quick Start
 ===
 - Clone or download this repository
-- Go inside of directory, cd odoo
+- Go inside of directory, cd docker/odoo
 - Run this command docker-compose up -d
 
 Try any Odoo version in minutes! Have fun. 
