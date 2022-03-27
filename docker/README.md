@@ -28,3 +28,8 @@ Quick Start
 - Clone or download this repository
 - Go inside of directory, cd odoo
 - Run this command docker-compose up -d
+
+Try any Odoo version in minute!! 
+
+
+Have fun. CsarGrnds
