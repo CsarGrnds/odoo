@@ -10,6 +10,8 @@ Architecture
 * Data Base: PostgreSQL
 * Data Base Administration (GUI): PGadmin
 
+** All data is persistent 
+
 <p align="left">
  <img width="600px" src="https://nagsis.com/images/odoo.png" align="center" alt="Odoo Docker Compose" />
 </p>
@@ -29,7 +31,6 @@ Quick Start
 - Go inside of directory, cd odoo
 - Run this command docker-compose up -d
 
-Try any Odoo version in minute!! 
+Try any Odoo version in minute! Have fun. 
 
-
-Have fun. CsarGrnds
+CsarGrnds
