@@ -1,6 +1,6 @@
 Odoo with micro services
 ===
-This Docker Compose file will deploy a Odoo application with isolated services ideal for testing purposes, be ready to use Odoo just with one command in seconds.
+This Docker Compose file will deploy Odoo with isolated services ideal for testing purposes, be ready to use Odoo just with one command in seconds.
 
 Architecture
 ===
@@ -25,12 +25,13 @@ Requirements:
 - docker >= 20.10.13+
 - docker-compose
 
-Quick Start
 
+Quick Start
+===
 - Clone or download this repository
 - Go inside of directory, cd odoo
 - Run this command docker-compose up -d
 
-Try any Odoo version in minute! Have fun. 
+Try any Odoo version in minutes! Have fun. 
 
-CsarGrnds
+[CsarGrnds](https://csargrnds.com).
