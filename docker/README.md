@@ -1,4 +1,11 @@
-Odoo + Postgre + Nginx + PGadmin
+
+Nginx+ Odoo + PostgreSQL + PGadmin
+
+<p align="center">
+ <img width="800px" src="https://nagsis.com/images/odoo.png" align="center" alt="Odoo Docker Compose" />
+</p>
+
+Configuration Process
 
 Requirements:
 
