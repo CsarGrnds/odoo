@@ -5,7 +5,7 @@ services:
 #Database Layer
   db:
     container_name: postgres
-    image: postgres:12.10
+    image: postgres:12.0
     environment:
       - POSTGRES_PASSWORD=odoo
       - POSTGRES_USER=odoo
@@ -23,14 +23,15 @@ services:
 #Aplication Layer
   app:
     container_name: odoo12
-    image: odoo:12.0
+    build:
+      context:
+        $PWD/app/config
+    #image: odoo:12.0
     platform: linux/x86_64
     #APP - Storage Leyer
     volumes:
       - $PWD/app/data:/var/lib/odoo
-      - $PWD/app/config:/etc/odoo
       - $PWD/app/addons:/mnt/extra-addons
-      - $PWD/app/enterprise:/mmt/enterprise
     ports: 
       - 8069:8069
     networks:
